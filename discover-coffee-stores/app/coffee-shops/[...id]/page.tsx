@@ -1,8 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 
-export default function Page(props: {params: {name: string} }) {
+export default function Page(props: {params: {id: [string]} }) {
 
-  const { name } = props.params;
+  const { id } = props.params;
 
   //console.log(name);
   return (
@@ -10,9 +11,9 @@ export default function Page(props: {params: {name: string} }) {
     bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
       <h1>Discover Coffee Shops Near You</h1>
       <ul>
-        {name.map((clip, idx) => (
+        {id.map((thing: string, idx: number) => (
           <li key={idx}>
-            <h2>slug {idx}: {clip}</h2>
+            <h2>slug {idx}: {thing}</h2>
           </li>
         ))}
       </ul>
